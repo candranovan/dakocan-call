@@ -7,7 +7,7 @@ def balik():
     elif f == "t":
          sys.exit("\033[1;91mexit\033[1;97m")
 os.system("clear")
-print ("\tSPAM CALL V4.0")
+print ("\tSPAM CALL VERSION 5")
 print ("      Coded: \033[1;96mMR.GRIMX72\033[1;97m")
 print ("\033[1;97m*     Github:\033[1;92m github.com/candranovan\033[1;97m      *")
 print()
